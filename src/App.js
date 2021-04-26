@@ -58,7 +58,12 @@ function App() {
           <Nav activeKey={window.location.pathname}>
             {/*conditional render login vs logout */}
             {isAuthenticated
-              ? <Nav.Link onClick={handleLogout}>Logout</Nav.Link>
+              ? <>
+                  <LinkContainer to="/settings">
+                    <Nav.Link>Settings</Nav.Link>
+                  </LinkContainer>
+                  <Nav.Link onClick={handleLogout}>Logout</Nav.Link>
+                </>
               : <>
                   <LinkContainer to="/signup">
                     <Nav.Link>Signup</Nav.Link>

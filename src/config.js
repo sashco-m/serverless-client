@@ -1,5 +1,6 @@
 export default {
     MAX_ATTACHMENT_SIZE: 5000000,
+    STRIPE_KEY: "pk_test_51IbXMMLuN2nizLL9rrk4GGFgyYmhPHMgbVZqCYKpoIRlk2mRHv8Ofxqna9ZjuZqaySPfbAS2fNJj2HxXPgJwd3J800xQ256hUL",
     s3: {
       REGION: "us-east-2",
       BUCKET: "sashcoimages"

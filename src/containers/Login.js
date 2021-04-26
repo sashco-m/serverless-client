@@ -8,8 +8,6 @@ import { Auth } from "aws-amplify";
 import { useAppContext } from "../libs/contextLib";
 import { useFormFields } from "../libs/hooksLib";
 
-import { useHistory } from "react-router-dom";
-
 import { onError } from "../libs/errorLib";
 
 
@@ -17,7 +15,6 @@ export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const { userHasAuthenticated } = useAppContext();
-  const history = useHistory();
   const [isLoading, setIsLoading] = useState(false);
   const [fields, handleFieldChange] = useFormFields({
     email: "",
@@ -36,7 +33,7 @@ export default function Login() {
     try {
       await Auth.signIn(fields.email, fields.password);
       userHasAuthenticated(true);
-      history.push("/");
+
     } catch (e) {
       //handle errors
       onError(e);
